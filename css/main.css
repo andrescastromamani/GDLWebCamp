@@ -86,6 +86,92 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+html{
+  box-sizing: border-box;
+}
+*,*::before,*::after{
+  box-sizing: inherit;
+}
+body{
+  background-color: #f2f2f2;
+  font-family: 'Open Sans', sans-serif;
+}
+h2{
+  font-family: 'Oswald', sans-serif;
+}
+/*Header*/
+.hero{
+  background-image: url(../img/encabezado.jpg);
+  height: 100vh;
+  background-position: top center;
+  background-size: cover;
+}
+.contenido-header{
+  padding-top: 40px;
+}
+@media (min-width: 768px) {
+  .contenido-header{
+    padding-top: 10px;
+  }
+}
+.redes-sociales{
+  text-align: center;
+}
+.redes-sociales a{
+  font-size: 2rem;
+  color: #ffffff;
+  margin-right: 2rem;
+}
+.redes-sociales a:last-of-type{
+  margin-right: 0;
+}
+.informacion-evento{
+  text-align: center;
+  color: #ffffff;
+}
+@media (min-width: 768px) {
+  .informacion-evento{
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+}
+.informacion-evento p{
+  margin: 0;
+  display: inline;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.informacion-evento p i{
+  color: #fe4918;
+  font-size: 2rem;
+}
+.fecha{
+  float: left;
+}
+.ciudad{
+  float: right;
+  text-align: right;
+}
+.nombre-sitio{
+  font-family: 'PT Sans', sans-serif;
+  font-size: 5.9vw;
+  text-transform: uppercase;
+}
+@media (min-width: 768px) {
+  .nombre-sitio{
+    font-size: 11.5vw;
+    margin: 0;
+    line-height: 1;
+    margin-bottom: 2rem;
+  }
+}
+.slogan{
+  text-transform: none !important;
+}
+.slogan span{
+  font-weight: bold;
+}
 
 /* ==========================================================================
    Helper classes
