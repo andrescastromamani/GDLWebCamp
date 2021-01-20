@@ -657,6 +657,24 @@ blockquote p::before{
   font-size: 7vw;
   font-family: 'PT-Sans', sans-serif;
 }
+
+/*Cuenta regresiva*/
+.cuenta-regresiva ul li{
+
+  text-transform: uppercase;
+  font-family: 'Oswald',sans-serif;
+  font-size: 1.8rem;
+  text-align: center; 
+}
+.cuenta-regresiva ul li p{
+  font-size: 6rem;
+}
+@media (min-width: 768px) {
+  .cuenta-regresiva ul li{
+    float: left;
+    width: 25%;
+  }
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */
