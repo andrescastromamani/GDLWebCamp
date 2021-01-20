@@ -146,6 +146,14 @@ h3{
 .button:hover{
   background-color: #e33000;
 }
+.button.transparente{
+  background-color: transparent;
+  border: 2px solid #ffffff;
+}
+.button.transparente:hover{
+  border-color: #fe4918;
+  background-color: #fe4918;
+}
 .float-rigth{
   float: right;
 }
@@ -622,6 +630,32 @@ blockquote p::before{
   display: block;
   text-transform: none;
   margin-top: 5px;
+}
+
+/*News Letter*/
+.newsletter{
+  position: relative;
+  height: auto;
+}
+.newsletter::before{
+  background-image: url(../img/bg-newsletter.jpg);
+  content: '';
+}
+.newsletter .contenido{
+  padding: 100px 0;
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+}
+.newsletter .contenido p{
+  font-size: 1.2rem;
+  text-transform: lowercase;
+}
+.newsletter .contenido h3{
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 7vw;
+  font-family: 'PT-Sans', sans-serif;
 }
 /* ==========================================================================
    Helper classes
