@@ -675,6 +675,45 @@ blockquote p::before{
     width: 25%;
   }
 }
+/*Footer*/
+.site-footer{
+  background-color: #353535;
+  padding-top: 40px;
+  margin-top: 30px;
+}
+.site-footer .contenedor > div{
+  color: #ffffff;
+  padding: 0 20px;
+  font-size: 12px;
+  
+}
+@media (min-width: 768px) {
+  .site-footer .contenedor > div{
+    width: 33.3%;
+    float: left;
+  }
+}
+.site-footer h3{
+  color: #ffffff;
+  text-transform: uppercase;
+  font-family: 'Oswald',sans-serif;
+}
+.site-footer h3 span{
+  color:#fe4918
+}
+.ultimos-tweets li{
+  margin-bottom: 10px;
+}
+.menu .redes-sociales{
+  text-align: left;
+}
+.copyright{
+  background-color: #2e2e2e;
+  padding: 10px 0;
+  color: #ffffff;
+  margin: 20px 0 0 0;
+  text-align: center;
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */
