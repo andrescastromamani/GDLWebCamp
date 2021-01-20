@@ -559,6 +559,70 @@ img{
   height: 420px;
   background-color: green;
 }
+
+/*Testimomiales*/
+.testimoniales{
+  padding: 20px;
+}
+.testimonial{
+  padding: 5px;
+}
+@media (min-width: 768px) {
+  .testimonial{
+    float: left;
+    width: 33.3%;
+  }
+}
+blockquote{
+  background-color: #ffffff;
+  border: 1px solid #e1e1e1;
+  position: relative;
+  margin: 0 0 10px 0;
+  padding-bottom: 20px;
+}
+blockquote p{
+  text-align: justify!important;
+  font-size: 1em;
+  font-family: 'PT-Sans', sans-serif;
+  padding: 0 20px 0 65px;
+}
+blockquote p::before{
+  content: '\201c';
+  position: absolute;
+  left: 13px;
+  top: 5px;
+  font-size: 8rem;
+  margin:0;
+  padding:0;
+  line-height: 1;
+  color: #fe4918;
+}
+.info-testimonial{
+  padding: 0;
+}
+.info-testimonial img{
+  float: left;
+  width: 20%;
+  border-radius: 50%;
+  margin-left: 20px;
+}
+.info-testimonial cite{
+  text-align: left;
+  color: #fe4918;
+  text-transform: uppercase;
+  font-size: 12px;
+  padding-top: 20px;
+  width: 66.6%;
+  float: right;
+  font-weight: bold;
+  font-style: normal;
+}
+.info-testimonial cite span{
+  color: #000000;
+  display: block;
+  text-transform: none;
+  margin-top: 5px;
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */
