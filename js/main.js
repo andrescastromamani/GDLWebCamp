@@ -2,6 +2,16 @@
     "use strict";
     var regalo = document.getElementById('regalo');
     document.addEventListener('DOMContentLoaded', function(){
+        var map = L.map('mapa').setView([-17.392293, -66.145125], 17);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        L.marker([-17.392293, -66.145125]).addTo(map)
+        .bindPopup('GDLWEBCAMP 2021 | Boletos Ya Disponibles')
+        .openPopup();
+
         //Datos Usuario
         var nombre = document.getElementById('nombre');
         var apellido = document.getElementById('apellido');
