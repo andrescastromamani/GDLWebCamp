@@ -762,7 +762,7 @@ h4{
 }
 .contenido-dia{
   padding: 20px;
-  /*display: none;*/
+  display: none;
 }
 @media (min-width: 768px) {
   .contenido-dia > div{
@@ -810,6 +810,24 @@ h4{
 .resumen input{
   display: block;
   margin: 10px auto;
+}
+#lista-productos{
+  background-color: #e1e1e1;
+  padding: 20px;
+  display: none
+}
+#suma-total{
+  color: #fe4918;
+  font-size: 2em;
+  text-align: center;
+}
+input[disabled].button{
+  opacity: .5;
+}
+#error{
+  clear: both;
+  padding: 20px;
+  text-align: center;
 }
 /* ==========================================================================
    Helper classes
