@@ -1,16 +1,18 @@
 (function(){
     "use strict";
     var regalo = document.getElementById('regalo');
+
     document.addEventListener('DOMContentLoaded', function(){
-        var map = L.map('mapa').setView([-17.392293, -66.145125], 17);
+
+        /*var map = L.map('map').setView([-17.392293,-66.145125], 17);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
-        L.marker([-17.392293, -66.145125]).addTo(map)
+        L.marker([-17.392293,-66.145125]).addTo(map)
         .bindPopup('GDLWEBCAMP 2021 | Boletos Ya Disponibles')
-        .openPopup();
+        .openPopup();*/
 
         //Datos Usuario
         var nombre = document.getElementById('nombre');
@@ -26,8 +28,8 @@
         var calcular = document.getElementById('calcular');
         var errorDiv = document.getElementById('error');
         var botonRegistro = document.getElementById('btnRegistro');
-        var lista_productos = document.getElementById('lista-productos');
-        var sumaTotal = document.getElementById('suma-total');
+        var lista_productos = document.getElementById('lista_productos');
+        var sumaTotal = document.getElementById('suma_total');
 
         //Extras y etiquetas
         var camisasEvento = document.getElementById('camisa_evento');
@@ -80,8 +82,7 @@
                     numeroCamisas = parseInt(camisasEvento.value,10)||0,
                     numeroEtiquetas = parseInt(etiquetas.value,10)||0;
             
-                var total = (boletosDia*30) + boletos2dias*45 + boletosCompleto*50 + (numeroCamisas*10)*0.93  + numeroEtiquetas*2;
-                //console.log('Total Monto: '+ total);
+                var total = (boletosDia*30) + (boletos2dias*45) + (boletosCompleto*50) + (numeroCamisas*10)*.93  + (numeroEtiquetas*2);
 
                 var listaProductos = [];
                 if(boletosDia > 0){
@@ -128,5 +129,7 @@
                 document.getElementById(diasElegidos[i]).style.display='block';
             }
         }
+
+
     });
 })();
