@@ -35,102 +35,102 @@
         var camisasEvento = document.getElementById('camisa_evento');
         var etiquetas = document.getElementById('etiquetas');
 
-        //eventos
-        calcular.addEventListener('click',calcularMontos);
-        pase_dia.addEventListener('blur', mostrarDias);
-        pase_completo.addEventListener('blur', mostrarDias);
-        pase_dosdias.addEventListener('blur', mostrarDias);
+        if(calcular){
+            //eventos
+            calcular.addEventListener('click',calcularMontos);
+            pase_dia.addEventListener('blur', mostrarDias);
+            pase_completo.addEventListener('blur', mostrarDias);
+            pase_dosdias.addEventListener('blur', mostrarDias);
 
-        //Validaciones los campos con javascript
-        nombre.addEventListener('blur',validarCampos);
-        apellido.addEventListener('blur', validarCampos);
-        email.addEventListener('blur',validarCampos);
-        email.addEventListener('blur',validarMail);
+            //Validaciones los campos con javascript
+            nombre.addEventListener('blur',validarCampos);
+            apellido.addEventListener('blur', validarCampos);
+            email.addEventListener('blur',validarCampos);
+            email.addEventListener('blur',validarMail);
 
-        function validarCampos(){
-            if(this.value ==''){
-                errorDiv.style.display = 'block';
-                errorDiv.innerHTML = 'este campo es obligatorio';
-                this.style.border = '1px solid red';
-                errorDiv.style.border = '1px solid red';
-            }else{
-                errorDiv.style.display = 'none';
-                this.style.border = '1px solid #cccccc';
+            function validarCampos(){
+                if(this.value ==''){
+                    errorDiv.style.display = 'block';
+                    errorDiv.innerHTML = 'este campo es obligatorio';
+                    this.style.border = '1px solid red';
+                    errorDiv.style.border = '1px solid red';
+                }else{
+                    errorDiv.style.display = 'none';
+                    this.style.border = '1px solid #cccccc';
+                }
             }
-        }
-        function validarMail(){
-            if(this.value.indexOf('@') > -1){//index0f busca si existe el caracter en un arreglo o cadena
-                errorDiv.style.display = 'none';
-                this.style.border = '1px solid #cccccc';
-            }else{
-                errorDiv.style.display = 'block';
-                errorDiv.innerHTML = 'debe tener por lo menos una @';
-                this.style.border = '1px solid red';
-                errorDiv.style.border = '1px solid red';
+            function validarMail(){
+                if(this.value.indexOf('@') > -1){//index0f busca si existe el caracter en un arreglo o cadena
+                    errorDiv.style.display = 'none';
+                    this.style.border = '1px solid #cccccc';
+                }else{
+                    errorDiv.style.display = 'block';
+                    errorDiv.innerHTML = 'debe tener por lo menos una @';
+                    this.style.border = '1px solid red';
+                    errorDiv.style.border = '1px solid red';
+                }
             }
-        }
 
-        function calcularMontos(event){
-            event.preventDefault();
-            if(regalo.value === ''){
-                alert('debes elegir un regalo');
-                regalo.focus();
-            }else{
+            function calcularMontos(event){
+                event.preventDefault();
+                if(regalo.value === ''){
+                    alert('debes elegir un regalo');
+                    regalo.focus();
+                }else{
+                    var boletosDia = parseInt(pase_dia.value,10)||0,
+                        boletos2dias = parseInt(pase_dosdias.value,10)||0,
+                        boletosCompleto = parseInt(pase_completo.value,10)||0,
+                        numeroCamisas = parseInt(camisasEvento.value,10)||0,
+                        numeroEtiquetas = parseInt(etiquetas.value,10)||0;
+                
+                    var total = (boletosDia*30) + (boletos2dias*45) + (boletosCompleto*50) + (numeroCamisas*10)*.93  + (numeroEtiquetas*2);
+
+                    var listaProductos = [];
+                    if(boletosDia > 0){
+                        listaProductos.push(boletosDia + ' Pases por dia');
+                    }
+                    if(boletos2dias > 0){
+                        listaProductos.push(boletos2dias + ' Pases por 2 dias');
+                    }
+                    if(boletosCompleto > 0){
+                        listaProductos.push(boletosCompleto + ' Pases completos');
+                    }
+                    if(numeroCamisas > 0){
+                        listaProductos.push(numeroCamisas + ' Camisas');
+                    }
+                    if(numeroEtiquetas > 0){
+                        listaProductos.push(numeroEtiquetas + ' Etiquetas');
+                    }
+                    //console.log(listaProductos);
+                    lista_productos.style.display = 'block';
+                    lista_productos.innerHTML = '';
+                    for(var i=0 ; i<listaProductos.length ; i++){
+                        lista_productos.innerHTML +=  listaProductos[i] + '<br/>';
+                    }
+
+                    sumaTotal.innerHTML = '$ ' +  total.toFixed(2);//con 2 decimales
+                }
+            }
+            function mostrarDias(){
                 var boletosDia = parseInt(pase_dia.value,10)||0,
                     boletos2dias = parseInt(pase_dosdias.value,10)||0,
-                    boletosCompleto = parseInt(pase_completo.value,10)||0,
-                    numeroCamisas = parseInt(camisasEvento.value,10)||0,
-                    numeroEtiquetas = parseInt(etiquetas.value,10)||0;
-            
-                var total = (boletosDia*30) + (boletos2dias*45) + (boletosCompleto*50) + (numeroCamisas*10)*.93  + (numeroEtiquetas*2);
-
-                var listaProductos = [];
+                    boletosCompleto = parseInt(pase_completo.value,10)||0;
+                        
+                var diasElegidos = [];
                 if(boletosDia > 0){
-                    listaProductos.push(boletosDia + ' Pases por dia');
+                    diasElegidos.push('viernes');
                 }
                 if(boletos2dias > 0){
-                    listaProductos.push(boletos2dias + ' Pases por 2 dias');
+                    diasElegidos.push('viernes','sabado');
                 }
                 if(boletosCompleto > 0){
-                    listaProductos.push(boletosCompleto + ' Pases completos');
+                    diasElegidos.push('viernes','sabado','domingo');
                 }
-                if(numeroCamisas > 0){
-                    listaProductos.push(numeroCamisas + ' Camisas');
+                for(var i=0 ; i<diasElegidos.length ; i++){
+                    document.getElementById(diasElegidos[i]).style.display='block';
                 }
-                if(numeroEtiquetas > 0){
-                    listaProductos.push(numeroEtiquetas + ' Etiquetas');
-                }
-                //console.log(listaProductos);
-                lista_productos.style.display = 'block';
-                lista_productos.innerHTML = '';
-                for(var i=0 ; i<listaProductos.length ; i++){
-                    lista_productos.innerHTML +=  listaProductos[i] + '<br/>';
-                }
-
-                sumaTotal.innerHTML = '$ ' +  total.toFixed(2);//con 2 decimales
             }
         }
-        function mostrarDias(){
-            var boletosDia = parseInt(pase_dia.value,10)||0,
-                boletos2dias = parseInt(pase_dosdias.value,10)||0,
-                boletosCompleto = parseInt(pase_completo.value,10)||0;
-                    
-            var diasElegidos = [];
-            if(boletosDia > 0){
-                diasElegidos.push('viernes');
-            }
-            if(boletos2dias > 0){
-                diasElegidos.push('viernes','sabado');
-            }
-            if(boletosCompleto > 0){
-                diasElegidos.push('viernes','sabado','domingo');
-            }
-            for(var i=0 ; i<diasElegidos.length ; i++){
-                document.getElementById(diasElegidos[i]).style.display='block';
-            }
-        }
-
-
     });
 })();
 
