@@ -136,6 +136,9 @@
 
 $(function(){
 
+    //Lettering
+    $('.nombre-sitio').lettering();
+
     //Programa evento
     $('.programa-evento .info-curso:first').show();
     $('.menu-programa a:first').addClass('activo');
