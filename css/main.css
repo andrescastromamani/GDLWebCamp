@@ -312,6 +312,13 @@ img{
   background-color: #353535;
   padding: 20px 0;
 }
+.fixed{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
 .logo{
   width: 80%;
   float: left;
@@ -781,6 +788,14 @@ blockquote p::before{
 }
 
 /*PAGINAS INTERNAS*/
+/*Conferencias.html*/
+.conferencia .navegacion-principal .activo{
+  border-bottom: 2px solid #fe4918;
+}
+.galeria a{
+  display: inline-block;
+  padding: 5px;
+}
 /*Registro.html*/
 
 .registro h3{

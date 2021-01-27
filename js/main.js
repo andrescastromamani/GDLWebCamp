@@ -139,6 +139,20 @@ $(function(){
     //Lettering
     $('.nombre-sitio').lettering();
 
+    //Menu principal fijo
+    var windowheight = $(window).height();
+    var barraAltura = $('.barra').innerHeight();
+    $(window).scroll(function(){
+        var scroll = $(window).scrollTop();
+        if(scroll > windowheight){
+            $('.barra').addClass('fixed');
+            $('body').css({'margin-top':barraAltura+'px'});
+        }else{
+            $('.barra').removeClass('fixed');
+            $('body').css({'margin-top':'0px'});
+        }
+    });
+
     //Programa evento
     $('.programa-evento .info-curso:first').show();
     $('.menu-programa a:first').addClass('activo');
