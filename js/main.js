@@ -135,6 +135,8 @@
 })();
 
 $(function(){
+
+    //Programa evento
     $('.programa-evento .info-curso:first').show();
     $('.menu-programa a:first').addClass('activo');
     $('.menu-programa a').on('click',function(){
@@ -144,5 +146,19 @@ $(function(){
         var enlace = $(this).attr('href');
         $(enlace).fadeIn(1000);
         return false;//Para que no se mueva la pagina
+    });
+
+    //Animaciones para los numeros
+    $('#resumen-evento li:nth-child(1) p').animateNumber({ number: 6 },1200); //nth-child reemplaza a :first ya que no existe second
+    $('.resumen-evento li:nth-child(2) p').animateNumber({ number: 15 },1200);
+    $('.resumen-evento li:nth-child(3) p').animateNumber({ number: 3 },1200);
+    $('.resumen-evento li:nth-child(4) p').animateNumber({ number: 9 },1200);
+
+    //Cuenta Regresiva
+    $('.cuenta-regresiva').countdown('2021/02/30 12:00:00',function(event){
+        $('#dias').html(event.strftime('%D'));
+        $('#horas').html(event.strftime('%H'));
+        $('#minutos').html(event.strftime('%M'));
+        $('#segundos').html(event.strftime('%S'));
     });
 });
