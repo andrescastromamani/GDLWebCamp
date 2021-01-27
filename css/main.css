@@ -333,6 +333,7 @@ img{
 }
 .navegacion-principal{
   display: none;
+  width: 100%;
 }
 .navegacion-principal a{
   font-family: 'Oswald', sans-serif;
@@ -374,11 +375,11 @@ img{
 }
 /*Menu Movil*/
 .menu-movil{
-  width: 60px;
+  width: 50px;
   display: block;
   float: right;
   text-align: right;
-  margin-top: 12px;
+  margin-top: 10px;
 }
 .menu-movil:hover{
   cursor: pointer;
