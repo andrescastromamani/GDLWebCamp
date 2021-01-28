@@ -171,10 +171,17 @@ $(function(){
     });
 
     //Animaciones para los numeros
-    $('#resumen-evento li:nth-child(1) p').animateNumber({ number: 6 },1200); //nth-child reemplaza a :first ya que no existe second
-    $('.resumen-evento li:nth-child(2) p').animateNumber({ number: 15 },1200);
-    $('.resumen-evento li:nth-child(3) p').animateNumber({ number: 3 },1200);
-    $('.resumen-evento li:nth-child(4) p').animateNumber({ number: 9 },1200);
+    var resumenLista = jQuery('.resumen-evento');
+    if(resumenLista.length >0){
+        $('.resumen-evento').waypoint(function(){
+            $('#resumen-evento li:nth-child(1) p').animateNumber({ number: 6 },1200); //nth-child reemplaza a :first ya que no existe second
+            $('.resumen-evento li:nth-child(2) p').animateNumber({ number: 15 },1200);
+            $('.resumen-evento li:nth-child(3) p').animateNumber({ number: 3 },1200);
+            $('.resumen-evento li:nth-child(4) p').animateNumber({ number: 9 },1200);
+        },{
+            offset:'60%'
+        });
+    }
 
     //Cuenta Regresiva
     $('.cuenta-regresiva').countdown('2021/02/30 12:00:00',function(event){
