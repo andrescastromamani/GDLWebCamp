@@ -1,4 +1,4 @@
-<footer class="site-footer">
+  <footer class="site-footer">
     <div class="contenedor clearfix">
       <div class="footer-informacion">
         <h3>Sobre <span>GdlWebCamp</span></h3>
