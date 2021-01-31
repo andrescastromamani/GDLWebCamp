@@ -139,6 +139,11 @@ $(function(){
     //Lettering
     $('.nombre-sitio').lettering();
 
+    //agregara clase al menu
+    $('body.conferencia .navegacion-principal a:contains("Conferencia")').addClass('activo');
+    $('body.calendario .navegacion-principal a:contains("Calendario")').addClass('activo');
+    $('body.invitados .navegacion-principal a:contains("Invitados")').addClass('activo');
+
     //Menu principal fijo
     var windowheight = $(window).height();
     var barraAltura = $('.barra').innerHeight();

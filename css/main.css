@@ -790,7 +790,7 @@ blockquote p::before{
 
 /*PAGINAS INTERNAS*/
 /*Conferencias.html*/
-.conferencia .navegacion-principal .activo{
+.navegacion-principal .activo{
   border-bottom: 2px solid #fe4918;
 }
 .galeria a{

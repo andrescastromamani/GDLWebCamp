@@ -38,7 +38,7 @@
   <meta name="theme-color" content="#fafafa">
 </head>
 
-<body>
+<body class="<?php echo $pagina;?>">
   <header class="site-header">
     <div class="hero">
       <div class="contenido-header">
