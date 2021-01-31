@@ -19,9 +19,18 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
   
+  <?php 
+    $archivo = basename($_SERVER['PHP_SELF']);
+    $pagina = str_replace(".php","",$archivo);
+    if($pagina == 'invitados'){
+      echo  '<link rel="stylesheet" href="css/colorbox.css">';
+    }else if($pagina == 'conferencia'){
+      echo '<link rel="stylesheet" href="css/lightbox.css">';
+    }
+  ?>
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/all.min.css">
-  <link rel="stylesheet" href="css/colorbox.css">
+  
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald&family=PT+Sans&display=swap" rel="stylesheet">
   
