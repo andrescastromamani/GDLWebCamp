@@ -235,7 +235,7 @@ img{
 }
 /*Header*/
 .hero{
-  background-image: url(../img/encabezado.jpg);
+  background-image: url(../img/cochabamba.jfif);
   height: 100vh;
   background-position: top center;
   background-size: cover;
@@ -955,6 +955,12 @@ input[disabled].button{
 .dia p i{
   font-size: 1.2em;
   color: #fe4918;
+}
+
+/*colorbox*/
+.cboxElement{
+  text-align: center;
+  padding: 20px!important;
 }
 /* ==========================================================================
    Helper classes

@@ -21,6 +21,7 @@
   
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/colorbox.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald&family=PT+Sans&display=swap" rel="stylesheet">
   
@@ -66,7 +67,7 @@
       <nav class="navegacion-principal">
         <a href="conferencia.php">Conferencia</a>
         <a href="calendario.php">Calendario</a>
-        <a href="#">Invitados</a>
+        <a href="invitados.php">Invitados</a>
         <a href="registro.php">Reservaciones</a>
       </nav>
     </div>
