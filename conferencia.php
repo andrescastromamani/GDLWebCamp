@@ -1,11 +1,6 @@
 <?php include_once 'includes/templates/header.php';?>
 
   <section class="seccion contenedor">
-    <h2>La mejor conferencia de diseño web en español</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam modi maxime odio dignissimos, cum, laudantium velit numquam sapiente reiciendis, quasi reprehenderit culpa vitae repellat ullam doloremque dolor sunt exercitationem consectetur?</p>
-  </section><!--Seccion conferencia-->
-
-  <section class="seccion contenedor">
     <h2>Galería de Fotos</h2>
     <div class="galeria">
         <a href="img/galeria/01.jpg" data-lightbox="galeria"><img src="img/galeria/thumbs/01.jpg" alt=""></a>
