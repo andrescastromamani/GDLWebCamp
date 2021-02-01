@@ -30,11 +30,12 @@
         var botonRegistro = document.getElementById('btnRegistro');
         var lista_productos = document.getElementById('lista_productos');
         var sumaTotal = document.getElementById('suma_total');
-
+        
         //Extras y etiquetas
         var camisasEvento = document.getElementById('camisa_evento');
         var etiquetas = document.getElementById('etiquetas');
 
+        botonRegistro.disabled = true;
         if(calcular){
             //eventos
             calcular.addEventListener('click',calcularMontos);
@@ -109,6 +110,8 @@
                     }
 
                     sumaTotal.innerHTML = '$ ' +  total.toFixed(2);//con 2 decimales
+                    botonRegistro.disabled = false;
+                    document.getElementById('total_pedido').value = total;
                 }
             }
             function mostrarDias(){
