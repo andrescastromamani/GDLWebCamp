@@ -1,7 +1,7 @@
 <?php
  require 'paypal/autoload.php';
 
- define('URL_SITIO','http://localhost:8080/Curso%20de%20Desarrollo%20Web/PagosPayPal');
+ define('URL_SITIO','http://localhost:8080/Curso%20de%20Desarrollo%20Web/GDLWebCamp/');
 
  $apiContext = new \PayPal\Rest\ApiContext(
     new \PayPal\Auth\OAuthTokenCredential(

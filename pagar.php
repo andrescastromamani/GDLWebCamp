@@ -15,7 +15,7 @@ use PayPal\Api\Payment;
 
 
 
-require 'config.php';
+require 'includes/paypal.php';
 $producto = htmlspecialchars($_POST['producto']);
 $precio = htmlspecialchars($_POST['precio']);
 $precio = (int)$precio;
