@@ -22,6 +22,7 @@ if(isset($_POST['submit'])):
     $total = $_POST['total_pedido'];
     $fecha = date('Y-m-d H:i:s');
     $boletos = $_POST['boletos'];
+    $numero_boletos = $boletos;
     $camisas = $_POST['pedido_extra']['camisas']['cantidad'];
     $precioCamisas = $_POST['pedido_extra']['camisas']['precio'];
 
@@ -32,10 +33,9 @@ if(isset($_POST['submit'])):
     //$eventos = $_POST['registro'];
     $registro = eventos_json($eventos);
     echo "<pre>";
-    var_dump($boletos);
+        var_dump($numero_boletos);
     echo "</pre>";
-    exit;
-endif;
+
     try {
         require_once('includes/funciones/bd_conexion.php');
         $stmt = $conn->prepare("INSERT INTO registrados(nombre_registrado,apellido_registrado,email_registrado,fecha_registro,pases_articulos,talleres_registrados,regalo,total_pagado) VALUES(?,?,?,?,?,?,?,?)");
@@ -43,26 +43,34 @@ endif;
         $stmt->execute();
         $stmt->close();
         $conn->close();
-        header('Location: validar_registro.php?exitoso=1');
+        //header('Location: validar_registro.php?exitoso=1');
         exit;
     } catch (Exception $e) {
         echo $e->getMessage();
     }  
-
+endif;
 
 $compra = new Payer();
-$compra->setPaymentMethod('paypal');/*
+$compra->setPaymentMethod('paypal');
 //echo $compra->getPaymentMethod();//obter el metodo de pago
-$articulo = new Item();
-$articulo->setName($producto)
-         ->setCurrency('USD')
-         ->setQuantity(1)
-         ->setPrice($precio);
+$i = 0;
+foreach ($numero_boletos as $key => $value) {
+    if((int) $value['cantidad'] > 0){
+        ${"articulo$i"} = new Item();
+        ${"articulo$i"}->setName('Pase: '.$key)
+                        ->setCurrency('USD')
+                        ->setQuantity((int) $value['cantidad'])
+                        ->setPrice((int) $value['precio']);
+
+         $i++;
+    }
+}
+echo $articulo0->getName();
 
 //echo $articulo->getQuantity();
 //echo $articulo->getName();
 //echo $articulo->getPrice();
-
+/*
 $listaArticulos = new ItemList();
 $listaArticulos->setItems(array($articulo));
 
