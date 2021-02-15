@@ -5,8 +5,8 @@
 
  $apiContext = new \PayPal\Rest\ApiContext(
     new \PayPal\Auth\OAuthTokenCredential(
-        'AZLeOdFl-Kx89QDQzv_NYycoq4DWRvZWEtWS0WaZFKtgFjpmxT6Swq3ETFYAayXSC-9E1BLoX8BAvnOJ',//cliente ID
-        'EClDDXCngMunRubsXsyQQYIuTEqzL7vK4mjIlBw_oyNNKdZltpI_Ns7hKOVXqc_1abq5hVtHcvkdDsXH'//Secret
+        'AQ-t2CLfXanN5-VY40zv00VX4a0Hq7KIY2Y8yuNnkReeJOFKGHVZfq6zeJ0m39nIyKbtm6KDnHt9pTw8',//cliente ID
+        'EFZ3N1ToRhluXVD0lmMjjQFDiRW3ILNdJwg-E6I_N2XOU4OMKDSeWlq_IFXcpfpP-QzW_KcMpJqrwZRV'//Secret
     )
  );
 
