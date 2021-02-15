@@ -21,7 +21,7 @@
                 $conn->close();
                 header('Location: validar_registro.php?exitoso=1');
                 exit;
-            } catch (\EXception $e) {
+            } catch (Exception $e) {
                 echo $e->getMessage();
             }  
 ?>
