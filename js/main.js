@@ -104,6 +104,7 @@
                     }
                     //console.log(listaProductos);
                     lista_productos.style.display = 'block';
+                    lista_productos.style.background = '#bfbfbf';
                     lista_productos.innerHTML = '';
                     for(var i=0 ; i<listaProductos.length ; i++){
                         lista_productos.innerHTML +=  listaProductos[i] + '<br/>';
